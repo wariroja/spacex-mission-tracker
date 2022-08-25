@@ -1,46 +1,22 @@
-# Getting Started with Create React App
+# SpaceX mission tracker utilizing GraphQL API 🚀
+![2022-08-25 03 23 11](https://user-images.githubusercontent.com/40623643/186641326-800858cb-382f-4fe5-93fd-970aecf2d12d.gif)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### To run project locally please run
+`npm install` to install all of the dependencies
+`npm start` to start the project
 
-## Available Scripts
+## Roadmap
 
-In the project directory, you can run:
+MVP: 
+- [x] Fetch data from SpaceX GraphQL api using apollo-clietn & GraphQL
+- [x] Impletmented filter 
+- [x] Implemented sort 
+- [x] Add unit tests
 
-### `npm start`
+Future improvements:
+- [ ] Implement pagination (performance improvement)
+- [ ] Refactor functions into smaller components and update TS types (for readability and reusability)
+- [ ] Beautify with CSS and mui library
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Challenges: 
+- Some of the ids from the API are duplicate therefore can't be use as key for mapping, otherwise will generate error on sorting and filtering. Fixed by generating new ids using `crypto.randomUUID()` function
