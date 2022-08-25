@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Table from '@mui/material/Table'
-import { TableBody, TableRow, TableCell, TableHead, TableSortLabel } from '@mui/material';
+import { TableBody, TableRow, TableCell, TableHead, TableSortLabel, Paper } from '@mui/material';
 import FilterBar from './FilterBar'
 interface LaunchesProps {
     launches: [{id?: string; mission_name?: string; launch_year?: string; details?: string;}];
@@ -13,7 +13,7 @@ const TableContainer = ({launches}: LaunchesProps) => {
         {id: 'details', label: 'Details', disableSorting: true},                 
     ]
     const [filterVal, setFilterVal] = useState('')
-    const [order, setOrder] = useState<'asc' | 'desc'>()
+    const [order, setOrder] = useState<'asc' | 'desc'>('asc')
     const [orderBy, setOrderBy] = useState("")
     const [filterLaunches, setFilterLaunches] = useState<any>([])
     const [final, setFinal] = useState<any>([])
@@ -45,7 +45,6 @@ const TableContainer = ({launches}: LaunchesProps) => {
     }
 
     function descendingComparator(a:any, b:any, orderBy:any) {
-        console.log('bo', a, b, orderBy)
         if (b[orderBy] < a[orderBy]) {
             return -1;
         }
@@ -60,7 +59,6 @@ const TableContainer = ({launches}: LaunchesProps) => {
     }
 
     const handleSearch = (e: any) => {
-        console.log('me')
         setFilterVal(e.target.value)
         filterNames(filterVal)
      
@@ -73,18 +71,17 @@ const TableContainer = ({launches}: LaunchesProps) => {
     }
 
 return( 
-        <div>
-            <FilterBar value={filterVal} onChange={handleSearch}/>
-            <Table>
-                <TableHead>
-                    <TableRow>
+    <div>
+            <FilterBar label="search" name="search" value={filterVal} onChange={handleSearch}/>
+            <Table sx={{margin: "24px"}} stickyHeader>
+                <TableHead >
+                    <TableRow >
                     {headCells.map(headCell => (
                         <TableCell key={headCell.id}
                             sortDirection={orderBy === headCell.id ? order : false}>
                                 {headCell.disableSorting ? headCell.label :
                                 <TableSortLabel
                                     active={orderBy === headCell.id}
-                                    direction={orderBy === headCell.id ? order : 'asc'}
                                     onClick={() => { handleSortRequest(headCell.id) }}>
                                     {headCell.label}
                                 </TableSortLabel>
@@ -95,10 +92,10 @@ return(
                 </TableHead>
                 <TableBody>
                     {recordsAfterSorting().map((launch: any) => (
-                        <TableRow>
+                        <TableRow key={crypto.randomUUID()}>
                             <TableCell>{launch.mission_name}</TableCell>
                             <TableCell>{launch.launch_year}</TableCell>
-                            <TableCell>{launch.details}</TableCell>
+                            <TableCell>{launch.details ? launch.details : <div className="italic" >no details available</div>}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>      

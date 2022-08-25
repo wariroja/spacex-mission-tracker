@@ -22,10 +22,9 @@ function App() {
   if (error) return <p>Error :(</p>;
   return (
       <div className="App">
-        <header>
-          Welcome to SpaceX Mission Tracker
+        <header className="App-header" >
+          Welcome to SpaceX Mission Tracker 🚀
         </header>
-        Choose view all to see all SpaceX launches, filter for specific launch, or sort by date
         <TableContainer launches={data.launches}/>
       </div>
   );
