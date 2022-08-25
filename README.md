@@ -1,12 +1,9 @@
 # SpaceX mission tracker utilizing GraphQL API 🚀
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+![2022-08-25 03 11 08](https://user-images.githubusercontent.com/40623643/186638582-6422d44f-a42a-4dcb-8294-8b03d41df875.gif)
 
 ### To run project locally please run
 `npm install` to install all of the dependencies
 `npm start` to start the project
-
 
 ## Roadmap
 
@@ -20,6 +17,5 @@ Future improvements:
 - [ ] Implement pagination (performance improvement)
 - [ ] Refactor functions into smaller components and update TS types (for readability and reusability)
 - [ ] Beautify with CSS and mui library
-
 
 
