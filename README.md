@@ -1,7 +1,7 @@
 # SpaceX mission tracker utilizing GraphQL API 🚀
 ![2022-08-25 03 23 11](https://user-images.githubusercontent.com/40623643/186641326-800858cb-382f-4fe5-93fd-970aecf2d12d.gif)
 
-### To run project locally please run
+### Running the project locally
 `npm install` to install all of the dependencies
 `npm start` to start the project
 
