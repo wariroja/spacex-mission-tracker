@@ -1,4 +1,4 @@
-# SpaceX mission tracker utilizing GraohQL API 🚀
+# SpaceX mission tracker utilizing GraphQL API 🚀
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
