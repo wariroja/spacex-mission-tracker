@@ -11,12 +11,15 @@ MVP:
 - [x] Fetch data from SpaceX GraphQL api using apollo-clietn & GraphQL
 - [x] Impletmented filter 
 - [x] Implemented sort 
-- [x] Add unit tests
+- [x] Simple unit tests
 
 Future improvements:
 - [ ] Implement pagination (performance improvement)
-- [ ] Refactor functions into smaller components and update TS types (for readability and reusability)
+- [ ] Add more tests (filter and sort)
+- [ ] Refactor functions into smaller components
+- [ ] Update type from any to correct types
 - [ ] Beautify with CSS and mui library
 
 Challenges: 
-- Some of the ids from the API are duplicate therefore can't be use as key for mapping, otherwise will generate error on sorting and filtering. Fixed by generating new ids using `crypto.randomUUID()` function
+- Some of the ids from the API are duplicate therefore can't be use as key for mapping, otherwise will generate error on sorting and filtering. Decided to use index for key instead. Another option could be `crypto.randomUUID()` function - but might affect performance. 
+- Issue with TypeScript not recognizing string as possible index value. Temp fix > use any. 
