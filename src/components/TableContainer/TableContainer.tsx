@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Table from '@mui/material/Table'
-import { TableBody, TableRow, TableCell, TableHead, TableSortLabel, Paper } from '@mui/material';
+import { TableBody, TableRow, TableCell, TableHead, TableSortLabel } from '@mui/material';
 import FilterBar from '../FilterBar/FilterBar'
-import { computeColumnTypes } from '@mui/x-data-grid/hooks/features/columns/gridColumnsUtils';
 interface LaunchesProps {
     launches: [{mission_name?: string; launch_year?: string; details?: string;}];
   }
