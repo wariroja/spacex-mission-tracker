@@ -1,16 +1,12 @@
 import React from 'react';
 import './App.css';
 import { useQuery, gql } from '@apollo/client';
-import TableContainer from './TableContainer';
+import TableContainer from './components/TableContainer/TableContainer';
 const GET_LAUNCHES = gql`
   query Launches {
     launches {
       mission_name
-      rocket {
-        rocket_name
-      }
       launch_year
-      id
       details
     }
   }
