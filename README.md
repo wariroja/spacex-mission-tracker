@@ -16,6 +16,7 @@ MVP:
 Future improvements:
 - [ ] Implement pagination (performance improvement)
 - [ ] Add more tests (filter and sort)
+- [ ] Utilizing hooks (useMemo and useEffect)
 - [ ] Refactor functions into smaller components
 - [ ] Update type from any to correct types
 - [ ] Beautify with CSS and mui library
